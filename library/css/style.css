@@ -496,6 +496,12 @@ FONT FACE (IN YOUR FACE)
       font-style: normal;
   }
 */
+@font-face {
+  font-family: 'BlockBE-Regular';
+  src: url("../fonts/BlockBE-Regular.eot");
+  src: url("../fonts/BlockBE-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/BlockBE-Regular.woff") format("woff"), url("../fonts/BlockBE-Regular.ttf") format("truetype"), url("../fonts/BlockBE-Regular.svg#BlockBE-Regular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
 /*
 The following is based of Typebase:
 https://github.com/devinhunt/typebase.css
@@ -1305,12 +1311,12 @@ LAYOUT & GRID STYLES
 LINK STYLES
 *********************/
 a, a:visited {
-  color: #f01d4f;
+  color: #93b733;
   /* on hover */
   /* on click */
   /* mobile tap color */ }
   a:hover, a:focus, a:visited:hover, a:visited:focus {
-    color: #d10e3c; }
+    color: #769329; }
   a:link, a:visited:link {
     /*
     this highlights links on iPhones/iPads.
@@ -1334,6 +1340,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
     text-decoration: none; }
 
 h1, .h1 {
+  font-family: "BlockBE-Regular", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 2.5em;
   line-height: 1.333em; }
 
@@ -1359,7 +1366,7 @@ h5, .h5 {
 HEADER STYLES
 *********************/
 .header {
-  background-color: #323944; }
+  background-color: #980f1f; }
 
 #logo {
   margin: 0.75em 0; }
