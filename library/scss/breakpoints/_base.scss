@@ -180,6 +180,7 @@ and more scalable.
 .nav {
 	border-bottom: 0;
 	margin: 0;
+  background-color: $vert-PG;
 
 	li {
 
@@ -196,6 +197,7 @@ and more scalable.
 			keep this file as small as possible!
 			*/
 			&:hover, &:focus {
+        background-color: $rouge-PG;
 
 			}
 		}
@@ -240,6 +242,8 @@ and more scalable.
 	li.current-menu-item,
 	li.current_page_item,
 	li.current_page_ancestor {
+    background-color: $rouge-PG;
+    box-shadow: 0px -10px 0px $rouge-PG, 0px 2px 10px;
 
 		a {}
 
@@ -289,6 +293,8 @@ POSTS & CONTENT STYLES
 		.page-title {}
 
 		.entry-title {}
+
+    .entry-header {}
 
 		.archive-title {}
 

@@ -13,6 +13,9 @@
 								<header class="article-header">
 
 									<h1 class="h2 entry-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1>
+									<?php if ( has_post_thumbnail() ) {
+										the_post_thumbnail('bones-thumb-600', array('class' => 'img-responsive', ));
+									} ?>
 									<p class="byline entry-meta vcard">
                                         				<?php printf( __( 'Posted %1$s by %2$s', 'bonestheme' ),
                        								/* the time the post was published */

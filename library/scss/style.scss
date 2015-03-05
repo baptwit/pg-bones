@@ -57,6 +57,9 @@ you hate oysters, then the world is your peanut butter & jelly sandwich.
 
 // forms (inputs & labels)
 @import "modules/forms";
+
+//helpers like responsive img
+@import "modules/helpers";
  
 /*********************
 BASE (MOBILE) SIZE
@@ -73,7 +76,7 @@ LARGER MOBILE DEVICES
 This is for devices like the Galaxy Note or something that's
 larger than an iPhone but smaller than a tablet. Let's call them
 tweeners.
-*********************/
+*********************/ 
 @media only screen and (min-width: 481px) {
 
 	// styles in 481up.scss

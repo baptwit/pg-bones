@@ -1231,6 +1231,11 @@ select {
   background-repeat: no-repeat;
   background-position: 97.5% center; }
 
+.img-responsive {
+  width: 100%;
+  height: auto;
+  display: block; }
+
 /*********************
 BASE (MOBILE) SIZE
 This are the mobile styles. It's what people see on their phones. If
@@ -1386,6 +1391,7 @@ and more scalable.
 .nav {
   border-bottom: 0;
   margin: 0;
+  background-color: #93b733;
   /* end .menu li */
   /* highlight current page */
   /* end current highlighters */ }
@@ -1408,9 +1414,16 @@ and more scalable.
       the style.scss file where it's relevant. We want to
       keep this file as small as possible!
       */ }
+      .nav li a:hover, .nav li a:focus {
+        background-color: #980f1f; }
     .nav li ul.sub-menu li a,
     .nav li ul.children li a {
       padding-left: 30px; }
+  .nav li.current-menu-item,
+  .nav li.current_page_item,
+  .nav li.current_page_ancestor {
+    background-color: #980f1f;
+    box-shadow: 0px -10px 0px #980f1f, 0px 2px 10px; }
 
 /* end .nav */
 /*********************

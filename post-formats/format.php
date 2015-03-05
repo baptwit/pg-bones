@@ -19,6 +19,9 @@
                 <header class="article-header entry-header">
 
                   <h1 class="entry-title single-title" itemprop="headline" rel="bookmark"><?php the_title(); ?></h1>
+                  <?php if ( has_post_thumbnail() ) {
+						the_post_thumbnail('bones-thumb-600', array('class' => 'img-responsive', ));
+					} ?>
 
                   <p class="byline entry-meta vcard">
 
