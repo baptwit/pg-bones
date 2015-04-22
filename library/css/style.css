@@ -1430,7 +1430,7 @@ and more scalable.
 POSTS & CONTENT STYLES
 *********************/
 #content {
-  margin-top: 1.5em; }
+  padding-top: 1.5em; }
 
 .hentry {
   background-color: #fff;
@@ -1880,6 +1880,16 @@ you can add resource intensive styles.
   /*********************
   HEADER STYLES
   *********************/
+  .header {
+    position: fixed;
+    width: 100%; }
+
+  #logo {
+    transition: all 0.4s ease; }
+
+  .scrolled #logo {
+    margin: 0; }
+
   /*********************
   NAVIGATION STYLES
   *********************/
@@ -1942,6 +1952,12 @@ you can add resource intensive styles.
         visibility: visible; }
 
   /* end .nav */
+  /*********************
+  POSTS & CONTENT STYLES
+  *********************/
+  #content {
+    padding-top: 12em; }
+
   /*********************
   SIDEBARS & ASIDES
   *********************/

@@ -31,10 +31,17 @@ LAYOUT & GRID STYLES
 HEADER STYLES
 *********************/
 
-.header {}
+.header {
+  position: fixed;
+  width: 100%;
+}
 
-	#logo {}
-
+	#logo {transition: all 0.4s ease;}
+.scrolled {
+  #logo {
+    margin: 0;
+  }
+}
 /*********************
 NAVIGATION STYLES
 *********************/
@@ -136,6 +143,16 @@ NAVIGATION STYLES
 	}  /* end current highlighters */
 
 } /* end .nav */
+
+
+/*********************
+POSTS & CONTENT STYLES
+*********************/
+
+#content {
+  padding-top: 12em;
+}
+
 
 /*********************
 SIDEBARS & ASIDES

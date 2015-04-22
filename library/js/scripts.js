@@ -115,6 +115,14 @@ jQuery(document).ready(function($) {
    * You can remove this if you don't need it
   */
   loadGravatars();
+  $(window).scroll(function() {
+  if ($(this).scrollTop() > 1){  
+      $('header').addClass("scrolled");
+    }
+    else{
+      $('header').removeClass("scrolled");
+    }
+  });
 
 
 }); /* end of as page load scripts */
