@@ -251,4 +251,63 @@ add_action('wp_enqueue_scripts', 'bones_fonts');
 		'comment-form'
 	) );
 
+
+// AJOUT DE PARAMETRE POUR LE SITE
+add_action( 'admin_init', 'pgSettings' );
+
+function pgSettings( )
+{ 
+	register_setting( 'pgSocialContact', 'googleAnaliticsCode' );
+	register_setting( 'pgSocialContact', 'googleverification' );
+}
+
+add_action( 'admin_menu', 'pgThemeAdminMenu' );
+
+function pgThemeAdminMenu( )
+{
+	add_menu_page(
+		'Options de mon thème', // le titre de la page
+		'PG Theme',            // le nom de la page dans le menu d'admin
+		'administrator',        // le rôle d'utilisateur requis pour voir cette page
+		'pg-theme-page',        // un identifiant unique de la page
+		'pgThemeSettingsPage'   // le nom d'une fonction qui affichera la page
+	);
+}
+
+function pgThemeSettingsPage( )
+{
+	?>
+		<div class="wrap">
+			<h2>Options PG theme</h2>
+
+			<form method="post" action="options.php">
+				<?php
+					// cette fonction ajoute plusieurs champs cachés au formulaire
+					// pour vous faciliter le travail.
+					// elle prend en paramètre le nom du groupe d'options
+					// que nous avons défini plus haut.
+
+					settings_fields( 'pgSocialContact' );
+					$test = settings_fields( 'pgSocialContact' );
+				?>
+
+				<table class="form-table">
+					<tr valign="top">
+						<th scope="row"><label for="googleAnaliticsCode">googleAnaliticsCode</label></th>
+						<td><input type="text" id="googleAnaliticsCode" name="googleAnaliticsCode" class="text" value="<?php form_option( 'googleAnaliticsCode' ); ?>" /></td>
+					</tr>
+					<tr valign="top">
+						<th scope="row"><label for="googleverification">googleverification</label></th>
+						<td><input type="text" id="googleverification" name="googleverification" class="text" value="<?php form_option( 'googleverification' ); ?>" /></td>
+					</tr>	
+				</table>
+
+				<p class="submit">
+					<input type="submit" class="button-primary" value="Update" />
+				</p>
+			</form>
+		</div>
+	<?php
+}
+
 /* DON'T DELETE THIS CLOSING TAG */ ?>
