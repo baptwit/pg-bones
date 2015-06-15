@@ -28,7 +28,8 @@
 								</header>
 
 								<section class="entry-content cf">
-									<?php the_content(); ?>
+									<?php //echo the_excerpt() ?>
+									<?php the_excerpt( '<span class="read-more">' . __( 'Read more &raquo;', 'bonestheme' ) . '</span>' ); ?>
 								</section>
 
 								<footer class="article-footer cf">
