@@ -118,6 +118,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
 	/* removing text decoration from all headline links */
 	a {
 		text-decoration: none;
+    color: $rouge-PG;
 	}
 }
 
@@ -125,6 +126,7 @@ h1, .h1 {
   font-family: $BlockBerthold;
 	font-size: 2.5em;
 	line-height: 1.333em;
+  color: $rouge-PG;
 }
 
 h2, .h2 {
