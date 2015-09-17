@@ -23,7 +23,7 @@
 						the_post_thumbnail('bones-thumb-600', array('class' => 'img-responsive', ));
 					} ?>
 
-                  <p class="byline entry-meta vcard">
+                  <!-- <p class="byline entry-meta vcard">
 
                     <?php printf( __( 'Posted %1$s by %2$s', 'bonestheme' ),
                        /* the time the post was published */
@@ -32,7 +32,7 @@
                        '<span class="by">by</span> <span class="entry-author author" itemprop="author" itemscope itemptype="http://schema.org/Person">' . get_the_author_link( get_the_author_meta( 'ID' ) ) . '</span>'
                     ); ?>
 
-                  </p>
+                  </p> -->
 
                 </header> <?php // end article header ?>
 

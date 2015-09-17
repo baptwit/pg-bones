@@ -73,7 +73,7 @@ if ( ! isset( $content_width ) ) {
 /************* THUMBNAIL SIZE OPTIONS *************/
 
 // Thumbnail sizes
-add_image_size( 'bones-thumb-600', 600, 150, true );
+add_image_size( 'bones-thumb-600', 600, 9999, false );
 add_image_size( 'bones-thumb-300', 300, 100, true );
 
 /*
@@ -345,5 +345,55 @@ return apply_filters('wp_trim_excerpt', $text, $raw_excerpt);
 }
 remove_filter('get_the_excerpt', 'wp_trim_excerpt');
 add_filter('get_the_excerpt', 'custom_wp_trim_excerpt');
+
+
+
+function twentythirteen_custom_header_setup() {
+	$args = array(
+		// Text color and image (empty to use none).
+		'default-text-color'     => '220e10',
+		'default-image'          => '%s/images/headers/circle.png',
+
+		// Set height and width, with a maximum value for the width.
+		'height'                 => 230,
+		'width'                  => 1600,
+
+		// Callbacks for styling the header and the admin preview.
+		//'wp-head-callback'       => 'twentythirteen_header_style',
+		//'admin-head-callback'    => 'twentythirteen_admin_header_style',
+		//'admin-preview-callback' => 'twentythirteen_admin_header_image',
+	);
+
+	add_theme_support( 'custom-header', $args );
+
+	/*
+	 * Default custom headers packaged with the theme.
+	 * %s is a placeholder for the theme template directory URI.
+	 */
+	register_default_headers( array(
+		'circle' => array(
+			'url'           => '%s/images/headers/circle.png',
+			'thumbnail_url' => '%s/images/headers/circle-thumbnail.png',
+			'description'   => _x( 'Circle', 'header image description', 'twentythirteen' )
+		),
+		'diamond' => array(
+			'url'           => '%s/images/headers/diamond.png',
+			'thumbnail_url' => '%s/images/headers/diamond-thumbnail.png',
+			'description'   => _x( 'Diamond', 'header image description', 'twentythirteen' )
+		),
+		'star' => array(
+			'url'           => '%s/images/headers/star.png',
+			'thumbnail_url' => '%s/images/headers/star-thumbnail.png',
+			'description'   => _x( 'Star', 'header image description', 'twentythirteen' )
+		),
+	) );
+}
+add_action( 'after_setup_theme', 'twentythirteen_custom_header_setup', 11 );
+
+function custom_oembed_filter($html, $url, $attr, $post_ID) {
+    $return = '<div class="embed-responsive embed-responsive-16by9">'.$html.'</div>'; //ajoute les classes bootstrap pour l'embed responsive
+    return $return;
+}
+add_filter( 'embed_oembed_html', 'custom_oembed_filter', 10, 4 );
 
 /* DON'T DELETE THIS CLOSING TAG */ ?>
