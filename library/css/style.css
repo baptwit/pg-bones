@@ -1401,7 +1401,8 @@ h5, .h5 {
 HEADER STYLES
 *********************/
 .header {
-  background-color: #980f1f; }
+  background-color: #980f1f;
+  z-index: 999; }
 
 #logo {
   margin: 0.75em 0; }
